@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx
 
-RUN sed -i "/index\s\+index\.html/ a try_files \$uri /index.html; " \
-             /etc/nginx/conf.d/default.conf
+COPY conf/default.conf /etc/nginx/conf.d/default.conf
+
